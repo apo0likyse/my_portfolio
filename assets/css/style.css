@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 :root{
   --paper:#f6f5f2;
   --surface:#eeece7;
@@ -7,6 +8,7 @@
   --accent:#6748bf;
   --accent-soft:#e8e3f2;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --heading: "Montserrat", var(--sans);
   --serif: Georgia, "Times New Roman", serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --page:1200px;
@@ -36,8 +38,8 @@ a{color:inherit}
 .hero-copy{padding:clamp(74px,12vh,126px) 0 clamp(54px,9vh,90px)}
 .hero-name{margin:0 0 18px 5px;font-size:clamp(15px,1.5vw,19px);font-weight:550;letter-spacing:-.025em}
 h1,h2,h3,p{margin-top:0}
-h1{max-width:1000px;margin:0;font-size:clamp(57px,10vw,126px);line-height:.91;letter-spacing:-.085em;font-weight:580}
-h1 em{color:var(--accent);font-family:var(--serif);font-size:1.02em;line-height:.94;letter-spacing:-.08em;font-weight:400}
+h1{max-width:1000px;margin:0;font-family:var(--heading);font-size:clamp(57px,10vw,126px);line-height:.98;letter-spacing:-.075em;font-weight:700}
+h1 em{color:var(--accent);font-family:var(--heading);font-style:normal;font-size:1em;line-height:1;letter-spacing:-.075em;font-weight:700}
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
 .hero-intro{max-width:560px;margin:0;font-size:clamp(15px,1.65vw,20px);line-height:1.62;letter-spacing:-.025em;color:#55524e}
 .text-link{display:inline-flex;align-items:center;gap:18px;padding-bottom:8px;border-bottom:1px solid var(--ink);font-size:12px;text-decoration:none;white-space:nowrap;transition:color .2s,border-color .2s}
@@ -48,7 +50,7 @@ h1 em{color:var(--accent);font-family:var(--serif);font-size:1.02em;line-height:
 .section-pad{padding-top:var(--section-space);padding-bottom:var(--section-space)}
 .section-heading{margin-bottom:48px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
 .eyebrow{margin-bottom:18px;color:var(--muted)}
-h2{margin:0;font-size:clamp(46px,7.2vw,82px);line-height:.97;letter-spacing:-.075em;font-weight:560}
+h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-height:1;letter-spacing:-.07em;font-weight:700}
 .section-aside{margin:0 2px 5px 0;font-size:12px;line-height:1.6;color:var(--muted)}
 .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .project{display:block;min-width:0;text-decoration:none}
@@ -57,14 +59,14 @@ h2{margin:0;font-size:clamp(46px,7.2vw,82px);line-height:.97;letter-spacing:-.07
 .sheet-two{background:#e9e9e4;color:#242522}
 .sheet-three{background:#eee6e1;color:#342927}
 .sheet-index,.sheet-foot{position:relative;z-index:1;color:color-mix(in srgb,currentColor 68%,transparent)}
-.sheet-title{display:block;position:relative;z-index:1;font-size:clamp(53px,8vw,94px);line-height:.82;letter-spacing:-.095em;font-weight:560}
+.sheet-title{display:block;position:relative;z-index:1;font-family:var(--heading);font-size:clamp(53px,8vw,94px);line-height:.9;letter-spacing:-.08em;font-weight:700}
 .sheet-title>span{color:var(--accent)}
 .sheet-title small{display:block;margin-top:11px;font-size:13px;letter-spacing:-.01em;font-weight:450}
-.sheet-title--words{font-size:clamp(33px,4.2vw,52px);line-height:.98;letter-spacing:-.075em}
-.sheet-title--words i{font-family:var(--serif);font-weight:400;color:var(--accent)}
+.sheet-title--words{font-size:clamp(33px,4.2vw,52px);line-height:1.04;letter-spacing:-.065em}
+.sheet-title--words i{font-family:var(--heading);font-style:normal;font-weight:700;color:var(--accent)}
 .project-meta{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:16px 0 17px;border-bottom:1px solid var(--line)}
 .project-num{padding-top:3px;font-family:var(--mono);font-size:10px;color:var(--muted)}
-.project-meta h3{margin:0 0 6px;font-size:14px;line-height:1.35;letter-spacing:-.025em;font-weight:620}
+.project-meta h3{margin:0 0 6px;font-family:var(--heading);font-size:14px;line-height:1.35;letter-spacing:-.04em;font-weight:700}
 .project-meta p{margin:0;font-size:10px;line-height:1.5;color:var(--muted)}
 .project-arrow{font-size:16px;color:var(--muted);transition:transform .2s ease,color .2s ease}
 .project:hover .project-sheet,.project:focus-visible .project-sheet{background:#e4deed}
@@ -84,7 +86,7 @@ h2{margin:0;font-size:clamp(46px,7.2vw,82px);line-height:.97;letter-spacing:-.07
 .experience>.eyebrow{margin:5px 0 0}
 .experience-item{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:25px 0;border-bottom:1px solid #d1cec7}
 .experience-date{padding-top:5px;color:var(--muted);line-height:1.5}
-.experience-item h3{margin:0 0 6px;font-size:19px;letter-spacing:-.045em;font-weight:600}
+.experience-item h3{margin:0 0 6px;font-family:var(--heading);font-size:19px;letter-spacing:-.045em;font-weight:700}
 .experience-item p{margin:0;font-size:11px;line-height:1.65;color:#68655f}
 .experience-item .experience-role{margin-bottom:10px;color:var(--ink);font-weight:550}
 .about-details{margin-top:clamp(48px,7vw,84px);padding-top:24px;border-top:1px solid #d1cec7;display:grid;grid-template-columns:.9fr .7fr 1.4fr;gap:32px}
@@ -109,7 +111,8 @@ h2{margin:0;font-size:clamp(46px,7.2vw,82px);line-height:.97;letter-spacing:-.07
 .case-lead{max-width:650px;margin:0;font-size:clamp(17px,2.2vw,23px);line-height:1.5;letter-spacing:-.035em;color:#5c5954}
 .case-type{margin-top:34px;font:9px var(--mono);letter-spacing:.05em;color:var(--muted)}
 .case-statement{margin:70px 0;background:var(--surface);min-height:250px;padding:clamp(26px,5vw,60px);display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
-.case-statement strong{font-size:clamp(48px,8vw,96px);line-height:.88;letter-spacing:-.09em;font-weight:550}
+.case-statement strong{font-family:var(--heading);font-size:clamp(48px,8vw,96px);line-height:.98;letter-spacing:-.075em;font-weight:700}
+.case-statement strong em{color:var(--accent);font-family:var(--heading);font-style:normal;font-weight:700}
 .case-statement span{font:9px var(--mono);letter-spacing:.04em;color:var(--muted)}
 .case-copy{max-width:760px;margin-left:auto}
 .case-copy h2{margin:42px 0 16px;font-size:28px;letter-spacing:-.05em}
