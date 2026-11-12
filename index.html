@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f6f5f2">
   <meta name="description" content="Елена Ляшок — менеджер по маркетингу. Избранные проекты, опыт и контакты.">
   <title>Елена Ляшок — портфолио</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=portfolio-examples-20261102">
-  <script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=work-tabs-20261112">
+  <script src="assets/js/main.js?v=work-tabs-20261112" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К основному содержанию</a>
@@ -38,20 +38,26 @@
         <div><p class="eyebrow">01 — ИЗБРАННЫЕ ПРОЕКТЫ</p><h2>Работы<span class="accent">.</span></h2></div>
         <p class="section-aside">Маркетинговые материалы,<br>события и партнёрства.</p>
       </div>
-      <div class="project-grid">
-        <a class="project" href="cases/case-01.html">
-          <div class="project-sheet sheet-one"><span class="sheet-index">ПАДЛХАБ · КРЕАТИВЫ</span><span class="sheet-title sheet-title--compact">Визуал</span><span class="sheet-foot">ПРЕЗЕНТАЦИИ И БРЕНД-МАТЕРИАЛЫ</span></div>
-          <div class="project-meta"><span class="project-num">01</span><div><h3>Падлхаб — креативы</h3><p>Презентации · бранчбук · медиакит</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="project" href="cases/case-02.html">
-          <div class="project-sheet sheet-two"><span class="sheet-index">ПАДЛХАБ · ТУРНИРЫ</span><span class="sheet-title sheet-title--words">Корт<br>Сетка<br>Пресс-волл</span><span class="sheet-foot">ОФОРМЛЕНИЕ ИНТЕГРИРУЕТ ПАРТНЁРОВ</span></div>
-          <div class="project-meta"><span class="project-num">02</span><div><h3>Оформление турниров</h3><p>Корты · сетки · пресс-воллы</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="project" href="cases/case-03.html">
-          <div class="project-sheet sheet-three"><span class="sheet-index">«КВИЗ, ПЛИЗ!» · 2023—2024</span><span class="sheet-title sheet-title--words">Идея<br><i>+ партнёр</i><br>+ событие</span><span class="sheet-foot">ПАРТНЁРСКИЙ МАРКЕТИНГ</span></div>
-          <div class="project-meta"><span class="project-num">03</span><div><h3>Партнёрские проекты</h3><p>Офлайн-игры · кросс-промо</p></div><span class="project-arrow" aria-hidden="true">↗</span></div>
-        </a>
+      <div class="work-tabs" role="tablist" aria-label="Категории работ">
+        <button role="tab" id="tab-presentations" aria-selected="true" aria-controls="panel-presentations" tabindex="0">Презентации</button>
+        <button role="tab" id="tab-branding" aria-selected="false" aria-controls="panel-branding" tabindex="-1">Брендинг</button>
+        <button role="tab" id="tab-design" aria-selected="false" aria-controls="panel-design" tabindex="-1">Оформление</button>
       </div>
+      <div id="panel-presentations" role="tabpanel" aria-labelledby="tab-presentations" tabindex="0">
+        <div class="presentation-list">
+          <article class="presentation-item"><div class="presentation-cover"><span>ПРЕЗЕНТАЦИЯ · 01</span><strong>Презентация<br>для проекта<span class="accent">.</span></strong><small>ПРИМЕР РАБОТЫ</small></div><div class="presentation-info"><div><h3>Презентация 01</h3><p>Место для вашей работы</p></div><a href="cases/work-viewer.html?item=presentations">Открыть пример ↗</a></div></article>
+          <article class="presentation-item" hidden><div class="presentation-cover"><span>ПРЕЗЕНТАЦИЯ · 02</span><strong>Презентация<br>для партнёров<span class="accent">.</span></strong><small>ПРИМЕР РАБОТЫ</small></div><div class="presentation-info"><div><h3>Презентация 02</h3><p>Место для вашей работы</p></div><a href="cases/work-viewer.html?item=presentations">Открыть пример ↗</a></div></article>
+          <article class="presentation-item" hidden><div class="presentation-cover"><span>ПРЕЗЕНТАЦИЯ · 03</span><strong>Презентация<br>для команды<span class="accent">.</span></strong><small>ПРИМЕР РАБОТЫ</small></div><div class="presentation-info"><div><h3>Презентация 03</h3><p>Место для вашей работы</p></div><a href="cases/work-viewer.html?item=presentations">Открыть пример ↗</a></div></article>
+        </div>
+        <div class="presentation-controls" aria-label="Переключение презентаций"><button type="button" data-slide="prev" aria-label="Предыдущая презентация">←</button><span aria-live="polite" id="presentation-count">01 / 03</span><button type="button" data-slide="next" aria-label="Следующая презентация">→</button></div>
+      </div>
+      <div id="panel-branding" role="tabpanel" aria-labelledby="tab-branding" tabindex="0" hidden>
+        <div class="category-grid"><a href="cases/case-01.html"><span>01 · БРЕНДИНГ</span><strong>Бренд-материалы<span>.</span></strong><small>Открыть кейс ↗</small></a><a href="cases/work-viewer.html?item=brandbook"><span>02 · БРЕНДИНГ</span><strong>Бранчбук<span>.</span></strong><small>Открыть пример ↗</small></a><a href="cases/work-viewer.html?item=media-kit"><span>03 · БРЕНДИНГ</span><strong>Медиакит<span>.</span></strong><small>Открыть пример ↗</small></a></div>
+      </div>
+      <div id="panel-design" role="tabpanel" aria-labelledby="tab-design" tabindex="0" hidden>
+        <div class="category-grid category-grid--design"><a href="cases/case-02.html"><span>01 · ОФОРМЛЕНИЕ</span><strong>Турниры<span>.</span></strong><small>Открыть кейс ↗</small></a><a href="cases/work-viewer.html?item=posters"><span>02 · ОФОРМЛЕНИЕ</span><strong>Плакаты<span>.</span></strong><small>Открыть пример ↗</small></a><a href="cases/work-viewer.html?item=leaflets"><span>03 · ОФОРМЛЕНИЕ</span><strong>Листовки<span>.</span></strong><small>Открыть пример ↗</small></a></div>
+      </div>
+      <a class="work-other" href="cases/case-03.html">Партнёрские проекты «Квиз, плиз!» ↗</a>
     </section>
 
     <section class="about-section section-pad" id="about">
