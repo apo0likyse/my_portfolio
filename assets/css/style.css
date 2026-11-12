@@ -329,3 +329,17 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
 }
 .presentation-cover--image{display:block;padding:0;overflow:hidden}
 .presentation-cover--image img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Slide transitions */
+.presentation-slides{position:relative;overflow:hidden;isolation:isolate}
+.presentation-cover.slide-out-next,.presentation-cover.slide-out-prev{position:absolute;inset:0;width:100%;z-index:1;pointer-events:none}
+.presentation-cover.slide-in-next,.presentation-cover.slide-in-prev{position:relative;z-index:2}
+.slide-out-next{animation:slide-out-next .42s cubic-bezier(.22,.68,0,1) both}
+.slide-out-prev{animation:slide-out-prev .42s cubic-bezier(.22,.68,0,1) both}
+.slide-in-next{animation:slide-in-next .42s cubic-bezier(.22,.68,0,1) both}
+.slide-in-prev{animation:slide-in-prev .42s cubic-bezier(.22,.68,0,1) both}
+@keyframes slide-out-next{to{transform:translateX(-12%) rotate(-1deg) scale(.97);opacity:0}}
+@keyframes slide-out-prev{to{transform:translateX(12%) rotate(1deg) scale(.97);opacity:0}}
+@keyframes slide-in-next{from{transform:translateX(15%) rotate(1deg) scale(.98);opacity:0}to{transform:none;opacity:1}}
+@keyframes slide-in-prev{from{transform:translateX(-15%) rotate(-1deg) scale(.98);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.slide-out-next,.slide-out-prev,.slide-in-next,.slide-in-prev{animation:none}}

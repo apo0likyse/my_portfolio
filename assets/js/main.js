@@ -24,10 +24,35 @@ tabs.forEach((tab, index) => {
 document.querySelectorAll('.presentation-item').forEach(presentation => {
   const slides = [...presentation.querySelectorAll('.presentation-cover')];
   const count = presentation.querySelector('.presentation-count');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let currentSlide = 0;
+  let transitionTimer;
+
+  function finishTransition() {
+    clearTimeout(transitionTimer);
+    slides.forEach((slide, index) => {
+      slide.classList.remove('slide-out-next', 'slide-out-prev', 'slide-in-next', 'slide-in-prev');
+      slide.hidden = index !== currentSlide;
+      slide.removeAttribute('aria-hidden');
+    });
+  }
+
   presentation.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => {
-    currentSlide = (currentSlide + (button.dataset.slide === 'next' ? 1 : -1) + slides.length) % slides.length;
-    slides.forEach((slide, index) => { slide.hidden = index !== currentSlide; });
+    finishTransition();
+    const previousSlide = currentSlide;
+    const direction = button.dataset.slide === 'next' ? 'next' : 'prev';
+    currentSlide = (currentSlide + (direction === 'next' ? 1 : -1) + slides.length) % slides.length;
+    const outgoing = slides[previousSlide];
+    const incoming = slides[currentSlide];
+    incoming.hidden = false;
+    if (reducedMotion.matches) {
+      outgoing.hidden = true;
+    } else {
+      outgoing.setAttribute('aria-hidden', 'true');
+      outgoing.classList.add(`slide-out-${direction}`);
+      incoming.classList.add(`slide-in-${direction}`);
+      transitionTimer = setTimeout(finishTransition, 460);
+    }
     count.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   }));
 });
