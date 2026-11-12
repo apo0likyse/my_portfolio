@@ -306,3 +306,24 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
 .presentation-viewport{position:relative}
 .presentation-item:nth-child(2) .presentation-cover{background:#f0d5ca}
 .presentation-item:nth-child(3) .presentation-cover{background:#d8e1f2}
+
+/* Main page spacing and presentation row */
+.hero h1{line-height:.90}
+.hero h1 em{line-height:inherit}
+.work-section.section-pad{padding-top:clamp(34px,5vw,64px)}
+.presentation-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.presentation-item{min-width:0}
+.presentation-cover{padding:clamp(14px,2vw,24px) clamp(42px,4vw,58px)}
+.presentation-cover strong{font-size:clamp(20px,2.5vw,32px)}
+.presentation-cover>span,.presentation-cover small{font-size:8px}
+.presentation-controls{padding:0 8px}
+.presentation-controls button{width:34px;height:34px;font-size:18px}
+.presentation-controls span{bottom:8px;font-size:9px}
+@media(max-width:700px){
+  .hero h1{line-height:.88}
+  .work-section.section-pad{padding-top:36px}
+  .presentation-list{grid-template-columns:repeat(3,minmax(250px,78%));gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:12px}
+  .presentation-item{scroll-snap-align:start}
+  .presentation-cover{padding:14px 46px}
+  .presentation-cover strong{font-size:clamp(20px,6vw,28px)}
+}
