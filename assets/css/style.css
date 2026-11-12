@@ -300,3 +300,5 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
   .category-grid strong{font-size:clamp(21px,6vw,32px)}
   .category-grid span,.category-grid small{font-size:9px}
 }
+.category-subsection--first{margin-top:0}
+@media(max-width:600px){.work-tabs button{min-width:0;line-height:1.2;overflow-wrap:anywhere}}
