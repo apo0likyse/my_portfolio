@@ -327,3 +327,5 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
   .presentation-cover{padding:14px 46px}
   .presentation-cover strong{font-size:clamp(20px,6vw,28px)}
 }
+.presentation-cover--image{display:block;padding:0;overflow:hidden}
+.presentation-cover--image img{display:block;width:100%;height:100%;object-fit:contain}
