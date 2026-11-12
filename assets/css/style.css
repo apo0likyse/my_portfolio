@@ -302,3 +302,7 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
 }
 .category-subsection--first{margin-top:0}
 @media(max-width:600px){.work-tabs button{min-width:0;line-height:1.2;overflow-wrap:anywhere}}
+.presentation-list{display:grid;gap:clamp(48px,7vw,84px)}
+.presentation-viewport{position:relative}
+.presentation-item:nth-child(2) .presentation-cover{background:#f0d5ca}
+.presentation-item:nth-child(3) .presentation-cover{background:#d8e1f2}

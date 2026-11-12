@@ -21,10 +21,13 @@ tabs.forEach((tab, index) => {
     selectTab(tabs[next], true);
   });
 });
-const slides = [...document.querySelectorAll('.presentation-item')];
-let currentSlide = 0;
-document.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => {
-  currentSlide = (currentSlide + (button.dataset.slide === 'next' ? 1 : -1) + slides.length) % slides.length;
-  slides.forEach((slide, index) => { slide.hidden = index !== currentSlide; });
-  document.getElementById('presentation-count').textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-}));
+document.querySelectorAll('.presentation-item').forEach(presentation => {
+  const slides = [...presentation.querySelectorAll('.presentation-cover')];
+  const count = presentation.querySelector('.presentation-count');
+  let currentSlide = 0;
+  presentation.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => {
+    currentSlide = (currentSlide + (button.dataset.slide === 'next' ? 1 : -1) + slides.length) % slides.length;
+    slides.forEach((slide, index) => { slide.hidden = index !== currentSlide; });
+    count.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+  }));
+});
