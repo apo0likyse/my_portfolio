@@ -1,4 +1,12 @@
 const tabs = [...document.querySelectorAll('.work-tabs [role="tab"]')];
+const tabList = document.querySelector('.work-tabs');
+function positionTabIndicator(tab) {
+  if (!tabList || !tab) return;
+  tabList.style.setProperty('--indicator-x', `${tab.offsetLeft}px`);
+  tabList.style.setProperty('--indicator-y', `${tab.offsetTop}px`);
+  tabList.style.setProperty('--indicator-width', `${tab.offsetWidth}px`);
+  tabList.style.setProperty('--indicator-height', `${tab.offsetHeight}px`);
+}
 function selectTab(tab, focus = false) {
   tabs.forEach(item => {
     const active = item === tab;
@@ -6,7 +14,17 @@ function selectTab(tab, focus = false) {
     item.tabIndex = active ? 0 : -1;
     document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
   });
+  positionTabIndicator(tab);
   if (focus) tab.focus();
+}
+if (tabList && tabs.length) {
+  const updateIndicator = () => positionTabIndicator(tabs.find(tab => tab.getAttribute('aria-selected') === 'true'));
+  updateIndicator();
+  tabList.classList.add('has-indicator');
+  requestAnimationFrame(() => requestAnimationFrame(() => tabList.classList.add('indicator-ready')));
+  window.addEventListener('resize', updateIndicator);
+  if (window.ResizeObserver) new ResizeObserver(updateIndicator).observe(tabList);
+  if (document.fonts) document.fonts.ready.then(updateIndicator);
 }
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => selectTab(tab));

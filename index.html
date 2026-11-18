@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f6f5f2">
   <meta name="description" content="Елена Ляшок — менеджер по маркетингу. Избранные проекты, опыт и контакты.">
   <title>Елена Ляшок — портфолио</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=straight-slide-20261112">
-  <script src="assets/js/main.js?v=slide-motion-20261112" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=contacts-20261113">
+  <script src="assets/js/main.js?v=sliding-tabs-20261113" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К основному содержанию</a>
@@ -33,6 +33,7 @@
     </section>
 
     <section class="work-section wrap section-pad" id="work">
+      <div class="work-sticky">
       <div class="section-heading">
         <div><p class="eyebrow">01 — ИЗБРАННЫЕ ПРОЕКТЫ</p><h2>Работы<span class="accent">.</span></h2></div>
         <p class="section-aside">Маркетинговые материалы,<br>события и партнёрства.</p>
@@ -42,18 +43,21 @@
         <button role="tab" id="tab-branding" aria-selected="false" aria-controls="panel-branding" tabindex="-1">POS-материалы</button>
         <button role="tab" id="tab-design" aria-selected="false" aria-controls="panel-design" tabindex="-1">Брендинг площадок</button>
       </div>
+      </div>
       <div id="panel-presentations" role="tabpanel" aria-labelledby="tab-presentations" tabindex="0">
         <div class="presentation-list">
           <article class="presentation-item" aria-label="Презентация 01">
             <div class="presentation-viewport">
               <div class="presentation-slides">
-                <div class="presentation-cover"><span>ПРЕЗЕНТАЦИЯ · 01</span><strong>Обложка<span class="accent">.</span></strong><small>МЕСТО ДЛЯ СЛАЙДА</small></div>
-                <div class="presentation-cover" hidden><span>ПРЕЗЕНТАЦИЯ · 01</span><strong>Страница 02<span class="accent">.</span></strong><small>МЕСТО ДЛЯ СЛАЙДА</small></div>
-                <div class="presentation-cover" hidden><span>ПРЕЗЕНТАЦИЯ · 01</span><strong>Страница 03<span class="accent">.</span></strong><small>МЕСТО ДЛЯ СЛАЙДА</small></div>
+                <div class="presentation-cover presentation-cover--image"><img src="assets/images/presentation-01/slide-01.png" alt="Презентация 1, слайд 1" width="1920" height="1080" loading="lazy" decoding="async"></div>
+                <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-02.png" alt="Презентация 1, слайд 2" width="1920" height="1080" loading="lazy" decoding="async"></div>
+                <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-03.png" alt="Презентация 1, слайд 3" width="1920" height="1080" loading="lazy" decoding="async"></div>
+                <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-04.png" alt="Презентация 1, слайд 4" width="1920" height="1080" loading="lazy" decoding="async"></div>
+                <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-05.png" alt="Презентация 1, слайд 5" width="1920" height="1080" loading="lazy" decoding="async"></div>
               </div>
-              <div class="presentation-controls" aria-label="Страницы презентации 01"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 01">←</button><span aria-live="polite" class="presentation-count">01 / 03</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 01">→</button></div>
+              <div class="presentation-controls" aria-label="Страницы презентации 01"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 01">←</button><span aria-live="polite" class="presentation-count">01 / 05</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 01">→</button></div>
             </div>
-            <div class="presentation-info"><div><h3>Презентация 01</h3><p>Место для вашей работы</p></div></div>
+            <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 01</p><h3>Выступление спикера<span class="accent">.</span></h3><p class="presentation-description">Описание проекта добавим здесь.</p></div><span class="presentation-detail">5 СЛАЙДОВ</span></div>
           </article>
           <article class="presentation-item" aria-label="Презентация 02">
             <div class="presentation-viewport">
@@ -68,12 +72,12 @@
               </div>
               <div class="presentation-controls" aria-label="Страницы презентации 02"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 02">←</button><span aria-live="polite" class="presentation-count">01 / 07</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 02">→</button></div>
             </div>
-            <div class="presentation-info"><div><h3>Презентация 02</h3><p>7 слайдов</p></div></div>
+            <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 02</p><h3>Информация<br>о продукте<span class="accent">.</span></h3><p class="presentation-description">Описание проекта добавим здесь.</p></div><span class="presentation-detail">7 СЛАЙДОВ</span></div>
           </article>
           <article class="presentation-item" aria-label="Презентация 03">
             <div class="presentation-viewport">
               <div class="presentation-slides">
-                <div class="presentation-cover presentation-cover--image"><img src="assets/images/presentation-03/slide-01.png" alt="Презентация 3, слайд 1" width="1920" height="1080" loading="lazy" decoding="async"></div>
+                <div class="presentation-cover presentation-cover--image"><img src="assets/images/presentation-03/slide-01.png?v=20261113" alt="Презентация 3, слайд 1" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-03/slide-02.png" alt="Презентация 3, слайд 2" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-03/slide-03.png" alt="Презентация 3, слайд 3" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-03/slide-04.png" alt="Презентация 3, слайд 4" width="1920" height="1080" loading="lazy" decoding="async"></div>
@@ -83,7 +87,7 @@
               </div>
               <div class="presentation-controls" aria-label="Страницы презентации 03"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 03">←</button><span aria-live="polite" class="presentation-count">01 / 07</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 03">→</button></div>
             </div>
-            <div class="presentation-info"><div><h3>Презентация 03</h3><p>7 слайдов</p></div></div>
+            <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 03</p><h3>Каталог услуг<span class="accent">.</span></h3><p class="presentation-description">Описание проекта добавим здесь.</p></div><span class="presentation-detail">7 СЛАЙДОВ</span></div>
           </article>
         </div>
       </div>
@@ -127,8 +131,8 @@
 
     <section class="contact-section wrap section-pad" id="contact">
       <p class="eyebrow">03 — КОНТАКТ</p>
-      <div class="contact-layout"><h2>Будем<br>на связи<span class="accent">.</span></h2><div class="contact-copy"><p>Ищете специалиста по маркетингу для спортивного или событийного проекта?</p><p class="contact-note">Почту и ссылки на соцсети добавим сюда.</p></div></div>
-      <div class="contact-bottom"><span>ЕЛЕНА ЛЯШОК</span><span>КОНТАКТНЫЕ ДАННЫЕ БУДУТ ДОБАВЛЕНЫ</span><a href="#main" class="text-link">Наверх <b aria-hidden="true">↑</b></a></div>
+      <div class="contact-layout"><h2>Будем<br>на связи<span class="accent">.</span></h2><div class="contact-copy"><p>Ищете специалиста по маркетингу для спортивного или событийного проекта?</p><div class="contact-links"><a href="tel:+79147782301"><span>Телефон</span><strong>+7 914 778 23 01</strong><b aria-hidden="true">↗</b></a><a href="mailto:llyashok@mail.ru"><span>Почта</span><strong>llyashok@mail.ru</strong><b aria-hidden="true">↗</b></a><a href="https://t.me/apo0li_kyse"><span>Telegram</span><strong>@apo0li_kyse</strong><b aria-hidden="true">↗</b></a></div></div></div>
+      <div class="contact-bottom"><span>ЕЛЕНА ЛЯШОК</span><a href="#main" class="text-link">Наверх <b aria-hidden="true">↑</b></a></div>
     </section>
   </main>
   <footer class="site-footer wrap"><span>© 2026 Елена Ляшок</span><span>ПОРТФОЛИО</span></footer>
