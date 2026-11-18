@@ -133,3 +133,73 @@ if (presentationDialog && typeof presentationDialog.showModal === 'function') {
 } else {
   document.querySelectorAll('.presentation-open').forEach(button => { button.hidden = true; });
 }
+
+const creativeGrid = document.querySelector('.creative-grid');
+if (creativeGrid) {
+  const creativeTiles = [...creativeGrid.querySelectorAll('.creative-tile')];
+  let lastGridWidth = 0;
+  function layoutCreativeGrid() {
+    const width = creativeGrid.clientWidth;
+    if (!width) { lastGridWidth = 0; return; }
+    if (width === lastGridWidth) return;
+    creativeGrid.classList.add('is-masonry');
+    const style = getComputedStyle(creativeGrid);
+    const row = parseFloat(style.gridAutoRows);
+    const gap = parseFloat(style.rowGap);
+    creativeTiles.forEach(tile => {
+      const image = tile.querySelector('img');
+      const height = tile.clientWidth * Number(image.getAttribute('height')) / Number(image.getAttribute('width'));
+      tile.style.gridRowEnd = `span ${Math.ceil((height + gap) / (row + gap))}`;
+    });
+    lastGridWidth = width;
+  }
+  if (window.ResizeObserver) new ResizeObserver(layoutCreativeGrid).observe(creativeGrid);
+  window.addEventListener('resize', layoutCreativeGrid);
+  if (tabList) {
+    tabList.addEventListener('click', () => requestAnimationFrame(layoutCreativeGrid));
+    tabList.addEventListener('keydown', () => requestAnimationFrame(layoutCreativeGrid));
+  }
+  layoutCreativeGrid();
+
+  const creativeDialog = document.querySelector('.creative-dialog');
+  if (creativeDialog && typeof creativeDialog.showModal === 'function') {
+    const dialogImage = creativeDialog.querySelector('.creative-dialog-image');
+    const dialogCount = creativeDialog.querySelector('.creative-count');
+    const closeButton = creativeDialog.querySelector('.creative-close');
+    let currentCreative = 0;
+    let previousOverflow = '';
+    function showCreative() {
+      const image = creativeTiles[currentCreative].querySelector('img');
+      dialogImage.src = image.dataset.fullSrc || image.currentSrc || image.src;
+      dialogImage.alt = `Креатив ${currentCreative + 1} из ${creativeTiles.length}`;
+      dialogCount.textContent = `${String(currentCreative + 1).padStart(2, '0')} / ${String(creativeTiles.length).padStart(2, '0')}`;
+    }
+    function moveCreative(step) {
+      currentCreative = (currentCreative + step + creativeTiles.length) % creativeTiles.length;
+      showCreative();
+    }
+    creativeTiles.forEach((tile, index) => tile.querySelector('.creative-open').addEventListener('click', () => {
+      currentCreative = index;
+      showCreative();
+      previousOverflow = document.body.style.overflow;
+      creativeDialog.showModal();
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    }));
+    closeButton.addEventListener('click', () => creativeDialog.close());
+    creativeDialog.querySelector('.creative-prev').addEventListener('click', () => moveCreative(-1));
+    creativeDialog.querySelector('.creative-next').addEventListener('click', () => moveCreative(1));
+    creativeDialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        moveCreative(event.key === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+    creativeDialog.addEventListener('click', event => {
+      if (event.target === creativeDialog) creativeDialog.close();
+    });
+    creativeDialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; });
+  } else {
+    creativeGrid.querySelectorAll('.creative-open').forEach(button => { button.disabled = true; });
+  }
+}
