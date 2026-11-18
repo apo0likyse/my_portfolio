@@ -527,12 +527,12 @@ body{background:var(--paper);overflow-x:clip}
 
 /* Portrait on the first screen */
 .hero-art{isolation:isolate}
-.hero-art::before{inset:4% -20%;background:radial-gradient(ellipse at 52% 48%,#b89be9b3 0%,#c8b3ef70 38%,transparent 72%);filter:blur(32px);z-index:-1}
+.hero-art::before{inset:4% -20%;background:radial-gradient(ellipse at 52% 48%,#9e7bdcbd 0%,#bba0eb88 38%,transparent 72%);filter:blur(32px);z-index:-1}
 .hero-portrait{position:absolute;z-index:1;bottom:0;left:50%;transform:translateX(-50%);display:block;width:100%;height:94%;object-fit:contain;object-position:center bottom}
 @media(max-width:600px){
   .hero-stage{display:flex;flex-direction:column;min-height:0}
   .hero-copy{padding:48px 0 8px}
   .hero-art{position:relative;right:auto;bottom:auto;width:100%;height:clamp(250px,78vw,360px);opacity:1}
-  .hero-art::before{inset:0 -10%;background:radial-gradient(ellipse at 62% 48%,#b89be99c 0%,#c8b3ef59 40%,transparent 72%)}
+  .hero-art::before{inset:0 -10%;background:radial-gradient(ellipse at 62% 48%,#9e7bdcab 0%,#bba0eb70 40%,transparent 72%)}
   .hero-portrait{left:auto;right:0;transform:none;width:min(100%,340px);height:100%;object-position:right bottom}
 }
