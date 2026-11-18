@@ -358,7 +358,6 @@ h2{margin:0;font-family:var(--heading);font-size:clamp(46px,7.2vw,82px);line-hei
 .presentation-info{padding:0 0 18px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:28px}
 .presentation-info .presentation-number{margin:0 0 20px;color:var(--muted);font:10px var(--mono);letter-spacing:.05em}
 .presentation-info h3{margin:0 0 16px;font:700 clamp(24px,2.7vw,38px)/1.08 var(--heading);letter-spacing:-.025em}
-.presentation-info .presentation-description{font-size:14px;line-height:1.65;color:var(--muted)}
 .presentation-detail{font:10px var(--mono);letter-spacing:.05em;color:var(--muted)}
 .presentation-cover strong{font-size:clamp(28px,4vw,52px)}
 @media(max-width:700px){
