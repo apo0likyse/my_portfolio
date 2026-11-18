@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f6f5f2">
   <meta name="description" content="Елена Ляшок — менеджер по маркетингу. Избранные проекты, опыт и контакты.">
   <title>Елена Ляшок — портфолио</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=portfolio-20261118">
-  <script src="assets/js/main.js?v=sliding-tabs-20261113" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=fullscreen-20261118">
+  <script src="assets/js/main.js?v=fullscreen-20261118" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К основному содержанию</a>
@@ -55,6 +55,7 @@
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-04.png" alt="Презентация 1, слайд 4" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-01/slide-05.png" alt="Презентация 1, слайд 5" width="1920" height="1080" loading="lazy" decoding="async"></div>
               </div>
+              <button class="presentation-open" type="button" aria-label="Открыть презентацию «Выступление спикера» крупно"><span aria-hidden="true">⤢</span></button>
               <div class="presentation-controls" aria-label="Страницы презентации 01"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 01">←</button><span aria-live="polite" class="presentation-count">01 / 05</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 01">→</button></div>
             </div>
             <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 01</p><h3>Выступление спикера<span class="accent">.</span></h3></div><span class="presentation-detail">5 СЛАЙДОВ</span></div>
@@ -70,6 +71,7 @@
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-02/slide-06.png" alt="Презентация 2, слайд 6" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-02/slide-07.png?v=20261118" alt="Презентация 2, слайд 7" width="1920" height="1080" loading="lazy" decoding="async"></div>
               </div>
+              <button class="presentation-open" type="button" aria-label="Открыть презентацию «Информация о продукте» крупно"><span aria-hidden="true">⤢</span></button>
               <div class="presentation-controls" aria-label="Страницы презентации 02"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 02">←</button><span aria-live="polite" class="presentation-count">01 / 07</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 02">→</button></div>
             </div>
             <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 02</p><h3>Информация<br>о продукте<span class="accent">.</span></h3></div><span class="presentation-detail">7 СЛАЙДОВ</span></div>
@@ -85,6 +87,7 @@
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-03/slide-06.png" alt="Презентация 3, слайд 6" width="1920" height="1080" loading="lazy" decoding="async"></div>
                 <div class="presentation-cover presentation-cover--image" hidden><img src="assets/images/presentation-03/slide-07.png" alt="Презентация 3, слайд 7" width="1920" height="1080" loading="lazy" decoding="async"></div>
               </div>
+              <button class="presentation-open" type="button" aria-label="Открыть презентацию «Каталог услуг» крупно"><span aria-hidden="true">⤢</span></button>
               <div class="presentation-controls" aria-label="Страницы презентации 03"><button type="button" data-slide="prev" aria-label="Предыдущий слайд презентации 03">←</button><span aria-live="polite" class="presentation-count">01 / 07</span><button type="button" data-slide="next" aria-label="Следующий слайд презентации 03">→</button></div>
             </div>
             <div class="presentation-info"><div><p class="presentation-number">ПРОЕКТ · 03</p><h3>Каталог услуг<span class="accent">.</span></h3></div><span class="presentation-detail">7 СЛАЙДОВ</span></div>
@@ -135,6 +138,14 @@
       <div class="contact-bottom"><span>ЕЛЕНА ЛЯШОК</span><a href="#main" class="text-link">Наверх <b aria-hidden="true">↑</b></a></div>
     </section>
   </main>
+  <dialog class="presentation-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><h2 id="dialog-title">Презентация</h2><button type="button" class="dialog-close" aria-label="Закрыть просмотр">✕</button></div>
+    <div class="dialog-content">
+      <div class="dialog-stage" aria-live="polite"></div>
+      <div class="dialog-controls"><button type="button" class="dialog-prev" aria-label="Предыдущий слайд">←</button><button type="button" class="dialog-next" aria-label="Следующий слайд">→</button></div>
+    </div>
+    <div class="dialog-footer"><span class="dialog-count" aria-live="polite"></span><span>Листайте стрелками ← →</span></div>
+  </dialog>
   <footer class="site-footer wrap"><span>© 2026 Елена Ляшок</span><span>ПОРТФОЛИО</span></footer>
 </body>
 </html>

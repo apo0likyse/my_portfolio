@@ -74,3 +74,62 @@ document.querySelectorAll('.presentation-item').forEach(presentation => {
     count.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   }));
 });
+
+const presentationDialog = document.querySelector('.presentation-dialog');
+if (presentationDialog && typeof presentationDialog.showModal === 'function') {
+  const dialogTitle = presentationDialog.querySelector('#dialog-title');
+  const dialogStage = presentationDialog.querySelector('.dialog-stage');
+  const dialogCount = presentationDialog.querySelector('.dialog-count');
+  const closeButton = presentationDialog.querySelector('.dialog-close');
+  let dialogSlides = [];
+  let dialogIndex = 0;
+  let previousBodyOverflow = '';
+
+  function showDialogSlide() {
+    const slide = dialogSlides[dialogIndex].cloneNode(true);
+    slide.hidden = false;
+    slide.removeAttribute('aria-hidden');
+    slide.classList.remove('slide-out-next', 'slide-out-prev', 'slide-in-next', 'slide-in-prev');
+    const image = slide.querySelector('img');
+    if (image) image.loading = 'eager';
+    dialogStage.replaceChildren(slide);
+    dialogCount.textContent = `${String(dialogIndex + 1).padStart(2, '0')} / ${String(dialogSlides.length).padStart(2, '0')}`;
+  }
+
+  function changeDialogSlide(step) {
+    dialogIndex = (dialogIndex + step + dialogSlides.length) % dialogSlides.length;
+    showDialogSlide();
+  }
+
+  document.querySelectorAll('.presentation-item').forEach(presentation => {
+    presentation.querySelector('.presentation-open').addEventListener('click', () => {
+      dialogSlides = [...presentation.querySelectorAll('.presentation-slides .presentation-cover')];
+      dialogIndex = Math.max(0, dialogSlides.findIndex(slide => !slide.hidden && slide.getAttribute('aria-hidden') !== 'true'));
+      dialogTitle.textContent = presentation.querySelector('.presentation-info h3').textContent;
+      showDialogSlide();
+      previousBodyOverflow = document.body.style.overflow;
+      presentationDialog.showModal();
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    });
+  });
+
+  closeButton.addEventListener('click', () => presentationDialog.close());
+  presentationDialog.querySelector('.dialog-prev').addEventListener('click', () => changeDialogSlide(-1));
+  presentationDialog.querySelector('.dialog-next').addEventListener('click', () => changeDialogSlide(1));
+  presentationDialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      changeDialogSlide(event.key === 'ArrowLeft' ? -1 : 1);
+    }
+  });
+  presentationDialog.addEventListener('click', event => {
+    if (event.target === presentationDialog) presentationDialog.close();
+  });
+  presentationDialog.addEventListener('close', () => {
+    document.body.style.overflow = previousBodyOverflow;
+    dialogStage.replaceChildren();
+  });
+} else {
+  document.querySelectorAll('.presentation-open').forEach(button => { button.hidden = true; });
+}
