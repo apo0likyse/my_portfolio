@@ -565,3 +565,11 @@ body{background:var(--paper);overflow-x:clip}
   .creative-grid.is-masonry .creative-tile:nth-child(6n+3){grid-column:span 6}
   .creative-open{border-radius:5px}
 }
+
+/* Compact selected creative works */
+@media(min-width:701px){
+  .creative-grid.is-masonry .creative-tile.creative-tile--compact-desktop{grid-column:span 3}
+}
+@media(max-width:700px){
+  .creative-grid.is-masonry .creative-tile.creative-tile--compact-mobile{grid-column:span 3}
+}
