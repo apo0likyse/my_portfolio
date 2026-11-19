@@ -573,3 +573,9 @@ body{background:var(--paper);overflow-x:clip}
 @media(max-width:700px){
   .creative-grid.is-masonry .creative-tile.creative-tile--compact-mobile{grid-column:span 3}
 }
+
+/* Keep the creative mosaic compact and fill available desktop columns. */
+@media(min-width:701px){
+  #panel-branding .creative-grid.is-masonry .creative-tile{grid-column:span 3}
+  #panel-branding .creative-grid.is-masonry .creative-tile:nth-child(3){grid-column:span 6}
+}
