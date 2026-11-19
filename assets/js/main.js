@@ -1,3 +1,9 @@
+// Show keyboard focus without leaving a focus ring after mouse or touch use.
+document.addEventListener('pointerdown', () => document.body.classList.add('using-pointer'));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Tab' || event.key.startsWith('Arrow')) document.body.classList.remove('using-pointer');
+});
+
 const tabs = [...document.querySelectorAll('.work-tabs [role="tab"]')];
 const tabList = document.querySelector('.work-tabs');
 function positionTabIndicator(tab) {
