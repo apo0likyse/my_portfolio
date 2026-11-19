@@ -529,13 +529,13 @@ body{background:var(--paper);overflow-x:clip}
 /* Portrait on the first screen */
 .hero-art{isolation:isolate}
 .hero-art::before{inset:4% -20%;background:radial-gradient(ellipse at 53% 48%,#8659cfb8 0%,#a781e68a 35%,#c8b2ef4d 55%,transparent 74%);filter:blur(38px);z-index:-1}
-.hero-portrait{position:absolute;z-index:1;bottom:0;left:50%;transform:translateX(-50%);display:block;width:100%;height:94%;object-fit:contain;object-position:center bottom}
+.hero-portrait{position:absolute;z-index:1;bottom:0;right:calc(-1 * max(var(--gutter), (100vw - var(--page)) / 2));display:block;width:auto;height:94%;object-fit:contain;object-position:right bottom}
 @media(max-width:600px){
   .hero-stage{display:flex;flex-direction:column;min-height:0}
   .hero-copy{padding:48px 0 8px}
   .hero-art{position:relative;right:auto;bottom:auto;width:100%;height:clamp(250px,78vw,360px);opacity:1}
   .hero-art::before{inset:0 -10%;background:radial-gradient(ellipse at 62% 48%,#8659cfa3 0%,#a781e677 38%,#c8b2ef3d 58%,transparent 74%)}
-  .hero-portrait{left:auto;right:0;transform:none;width:min(100%,340px);height:100%;object-position:right bottom}
+  .hero-portrait{width:auto;height:100%;object-position:right bottom}
 }
 
 /* Creative work mosaic */
