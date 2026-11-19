@@ -593,8 +593,10 @@ body{background:var(--paper);overflow-x:clip}
   #panel-design .branding-grid.is-masonry{grid-auto-rows:auto;grid-auto-flow:row;gap:12px}
   #panel-design .branding-grid.is-masonry .creative-tile{position:relative;align-self:stretch;grid-row:1 !important}
   #panel-design .branding-grid.is-masonry .creative-tile:nth-child(n+4){grid-row:2 !important}
-  #panel-design .branding-grid.is-masonry .creative-tile:first-child{aspect-ratio:4/3}
-  #panel-design .branding-grid.is-masonry .creative-tile:nth-child(4){aspect-ratio:3/2}
   #panel-design .branding-grid.is-masonry .creative-open{position:absolute;inset:0;width:100%;height:100%}
   #panel-design .branding-grid.is-masonry .creative-open img{width:100%;height:100%;object-fit:cover}
+  #panel-design .branding-grid.is-masonry .creative-tile:first-child .creative-open,
+  #panel-design .branding-grid.is-masonry .creative-tile:nth-child(4) .creative-open{position:relative;inset:auto;height:auto}
+  #panel-design .branding-grid.is-masonry .creative-tile:first-child .creative-open img,
+  #panel-design .branding-grid.is-masonry .creative-tile:nth-child(4) .creative-open img{height:auto}
 }
