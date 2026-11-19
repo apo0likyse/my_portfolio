@@ -42,12 +42,12 @@
         <p class="section-aside">Маркетинговые материалы,<br>события и партнёрства.</p>
       </div>
       <div class="work-tabs" role="tablist" aria-label="Категории работ">
-        <button role="tab" id="tab-presentations" aria-selected="true" aria-controls="panel-presentations" tabindex="0">Презентации</button>
-        <button role="tab" id="tab-branding" aria-selected="false" aria-controls="panel-branding" tabindex="-1">Креативы</button>
+        <button role="tab" id="tab-branding" aria-selected="true" aria-controls="panel-branding" tabindex="0">Креативы</button>
+        <button role="tab" id="tab-presentations" aria-selected="false" aria-controls="panel-presentations" tabindex="-1">Презентации</button>
         <button role="tab" id="tab-design" aria-selected="false" aria-controls="panel-design" tabindex="-1">Брендинг площадок</button>
       </div>
       </div>
-      <div id="panel-presentations" role="tabpanel" aria-labelledby="tab-presentations" tabindex="0">
+      <div id="panel-presentations" role="tabpanel" aria-labelledby="tab-presentations" tabindex="0" hidden>
         <div class="presentation-list">
           <article class="presentation-item" aria-label="Презентация 01">
             <div class="presentation-viewport">
@@ -97,7 +97,7 @@
           </article>
         </div>
       </div>
-      <div id="panel-branding" role="tabpanel" aria-labelledby="tab-branding" tabindex="0" hidden>
+      <div id="panel-branding" role="tabpanel" aria-labelledby="tab-branding" tabindex="0">
         <section class="creative-section" aria-labelledby="creative-title">
           <div class="creative-heading"><div><p class="eyebrow">ВИЗУАЛЬНЫЕ МАТЕРИАЛЫ</p><h3 id="creative-title">Креативы<span class="accent">.</span></h3></div><p>Листовки, плакаты и другие материалы для площадок.</p></div>
           <ul class="creative-grid" aria-label="Галерея креативов">
