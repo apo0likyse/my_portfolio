@@ -151,6 +151,7 @@ function setupWorkGallery(creativeGrid, creativeDialog, imageLabel) {
     creativeGrid.classList.add('is-masonry');
     const style = getComputedStyle(creativeGrid);
     const row = parseFloat(style.gridAutoRows);
+    if (!Number.isFinite(row) || row <= 0) { lastGridWidth = width; return; }
     const gap = parseFloat(style.columnGap);
     creativeTiles.forEach(tile => {
       const image = tile.querySelector('img');
