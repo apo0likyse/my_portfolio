@@ -528,7 +528,7 @@ body{background:var(--paper);overflow-x:clip}
 
 /* Portrait on the first screen */
 .hero-art{isolation:isolate}
-.hero-art::before{inset:4% -20%;background:radial-gradient(ellipse at 53% 48%,#8659cfb8 0%,#a781e68a 35%,#c8b2ef4d 55%,transparent 74%);filter:blur(38px);z-index:-1}
+.hero-art::before{inset:4% -20%;background:radial-gradient(ellipse at 53% 48%,#8659cfb8 0%,#a781e68a 35%,#c8b2ef4d 55%,transparent 74%);filter:blur(38px);transform:translateX(clamp(45px,12vw,140px));z-index:-1}
 .hero-portrait{position:absolute;z-index:1;bottom:0;right:calc(-1 * max(var(--gutter), (100vw - var(--page)) / 2));display:block;width:auto;height:94%;object-fit:contain;object-position:right bottom}
 @media(max-width:600px){
   .hero-stage{display:flex;flex-direction:column;min-height:0}
