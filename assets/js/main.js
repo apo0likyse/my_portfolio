@@ -134,8 +134,8 @@ if (presentationDialog && typeof presentationDialog.showModal === 'function') {
   document.querySelectorAll('.presentation-open').forEach(button => { button.hidden = true; });
 }
 
-const creativeGrid = document.querySelector('.creative-grid');
-if (creativeGrid) {
+function setupWorkGallery(creativeGrid, creativeDialog, imageLabel) {
+  if (!creativeGrid) return;
   const creativeTiles = [...creativeGrid.querySelectorAll('.creative-tile')];
   let lastGridWidth = 0;
   function layoutCreativeGrid() {
@@ -161,7 +161,6 @@ if (creativeGrid) {
   }
   layoutCreativeGrid();
 
-  const creativeDialog = document.querySelector('.creative-dialog');
   if (creativeDialog && typeof creativeDialog.showModal === 'function') {
     const dialogImage = creativeDialog.querySelector('.creative-dialog-image');
     const dialogCount = creativeDialog.querySelector('.creative-count');
@@ -171,7 +170,7 @@ if (creativeGrid) {
     function showCreative() {
       const image = creativeTiles[currentCreative].querySelector('img');
       dialogImage.src = image.dataset.fullSrc || image.currentSrc || image.src;
-      dialogImage.alt = `Креатив ${currentCreative + 1} из ${creativeTiles.length}`;
+      dialogImage.alt = `${imageLabel} ${currentCreative + 1} из ${creativeTiles.length}`;
       dialogCount.textContent = `${String(currentCreative + 1).padStart(2, '0')} / ${String(creativeTiles.length).padStart(2, '0')}`;
     }
     function moveCreative(step) {
@@ -203,3 +202,6 @@ if (creativeGrid) {
     creativeGrid.querySelectorAll('.creative-open').forEach(button => { button.disabled = true; });
   }
 }
+
+setupWorkGallery(document.querySelector('#panel-branding .creative-grid'), document.querySelector('.creative-dialog'), 'Креатив');
+setupWorkGallery(document.querySelector('.branding-grid'), document.querySelector('.branding-dialog'), 'Работа по брендингу');
