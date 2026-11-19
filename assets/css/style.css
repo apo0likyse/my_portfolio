@@ -580,3 +580,10 @@ body{background:var(--paper);overflow-x:clip}
   #panel-branding .creative-grid.is-masonry .creative-tile{grid-column:span 3}
   #panel-branding .creative-grid.is-masonry .creative-tile:nth-child(3){grid-column:span 6}
 }
+
+/* A balanced desktop mosaic for the venue branding gallery. */
+@media(min-width:701px){
+  #panel-design .branding-grid.is-masonry .creative-tile{grid-column:span 3}
+  #panel-design .branding-grid.is-masonry .creative-tile:first-child{grid-column:span 6}
+  #panel-design .branding-grid.is-masonry .creative-tile:nth-child(n+4){grid-column:span 4}
+}
