@@ -151,11 +151,11 @@ function setupWorkGallery(creativeGrid, creativeDialog, imageLabel) {
     creativeGrid.classList.add('is-masonry');
     const style = getComputedStyle(creativeGrid);
     const row = parseFloat(style.gridAutoRows);
-    const gap = parseFloat(style.rowGap);
+    const gap = parseFloat(style.columnGap);
     creativeTiles.forEach(tile => {
       const image = tile.querySelector('img');
-      const height = tile.clientWidth * Number(image.getAttribute('height')) / Number(image.getAttribute('width'));
-      tile.style.gridRowEnd = `span ${Math.ceil((height + gap) / (row + gap))}`;
+      const height = tile.getBoundingClientRect().width * Number(image.getAttribute('height')) / Number(image.getAttribute('width'));
+      tile.style.gridRowEnd = `span ${Math.ceil((height + gap) / row)}`;
     });
     lastGridWidth = width;
   }
